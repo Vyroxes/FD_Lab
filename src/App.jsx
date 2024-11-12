@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar, Nav, Button, Offcanvas, Carousel, Card} from 'react-bootstrap';
+import { Navbar, Nav, Button, Offcanvas, Carousel, Card, Form, ListGroup} from 'react-bootstrap';
+import TodoApp from './components/TodoApp'
 import './App.css';
 
 function App() {
     const [show, setShow] = useState(false);
     const [activePage, setActivePage] = useState('slider');
+    const [task, setTask] = useState('');
+    const [tasks, setTasks] = useState([]);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -15,16 +18,28 @@ function App() {
         handleClose();
     };
 
+    const handleAddTask = () => {
+        if (task.trim()) {
+            setTasks([...tasks, task]);
+            setTask('');
+        }
+    };
+
+    const handleDeleteTask = (index) => {
+        const newTasks = tasks.filter((_, i) => i !== index);
+        setTasks(newTasks);
+    };
+
     return (
         <div className="container">		
             <Navbar className="navbar" expand={false}>
-                <Button variant="primary" onClick={handleShow}>Menu</Button>
+                <button className="menu_button" variant="primary" onClick={handleShow}>Menu</button>
             </Navbar>
 
             <Offcanvas className="offcanvas" show={show} onHide={handleClose}>
                 <Offcanvas.Header className="offcanvas-header">
                     <Offcanvas.Title>Menu</Offcanvas.Title>
-					<Button variant="close" onClick={handleClose}/>
+					<button className="menu_close_button" variant="close" onClick={handleClose}>x</button>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <Nav className="flex-column">
@@ -78,8 +93,10 @@ function App() {
             )}
 			
 			{activePage === 'lista' && (
-				<div>
-					<h1>To-do lista!</h1>
+				<div className="App">
+                    <h1>To-do lista!</h1>
+
+                    <TodoApp />
                 </div>
             )}
 
