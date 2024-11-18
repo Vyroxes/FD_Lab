@@ -198,3 +198,25 @@ ul {
   text-align: center;
   background: linear-gradient(to left, #99ff99, #029974);
 }
+
+.formularz
+{
+  display: block;
+}
+
+.formularz label
+{
+	color: white;
+  margin: 10px auto;
+}
+
+.formularz input
+{
+  margin: 0px 10px;
+  width: 50%;
+}
+
+.formularz button
+{
+  margin: 10px auto;
+}

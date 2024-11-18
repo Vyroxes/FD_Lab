@@ -1,0 +1,13 @@
+{
+  "wypozyczalnia_samochodow": [
+    {
+      "id": "62ca",
+      "marka": "fas",
+      "model": "fas",
+      "rok_produkcji": "654",
+      "silnik": "asf",
+      "kolor": "asf",
+      "numer_rejestracyjny": "asf"
+    }
+  ]
+}

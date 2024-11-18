@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav, Button, Offcanvas, Carousel, Card, Form, ListGroup} from 'react-bootstrap';
 import TodoApp from './components/TodoApp'
+import DataDisplayApp from './components/DataDisplayApp';
 import './App.css';
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
                         <Nav.Link className="nav-link" onClick={() => handleNavClick('slider')}>Slider</Nav.Link>
                         <Nav.Link className="nav-link" onClick={() => handleNavClick('karty')}>Karty</Nav.Link>
 						<Nav.Link className="nav-link" onClick={() => handleNavClick('lista')}>Lista</Nav.Link>
+                        <Nav.Link className="nav-link" onClick={() => handleNavClick('wypozyczalnia')}>Wypożyczalnia</Nav.Link>
                     </Nav>
                 </Offcanvas.Body>
             </Offcanvas>
@@ -97,6 +99,14 @@ function App() {
                     <h1>To-do lista!</h1>
 
                     <TodoApp />
+                </div>
+            )}
+
+            {activePage === 'wypozyczalnia' && (
+                <div className="wypozyczalnia">
+                    <h1>Wypozyczalnia samochodów</h1>
+                    
+                    <DataDisplayApp />
                 </div>
             )}
 
