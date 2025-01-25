@@ -20,15 +20,15 @@ function TodoForm({ dodajZadanie })
     }
 
     return (
-        <form onSubmit={obsluzWyslanie} className="form">
+        <form onSubmit={obsluzWyslanie} className="to-do-lista">
             <input
                 type="text"
                 value={nazwa}
                 onChange={obsluzZmiane}
-                placeholder="Nowe zadanie"
+                placeholder="Nowe zadanie (minimum 5 znaków)"
                 className="search"
             />
-            <button type="submit" className="add_button">Dodaj</button>
+            <button type="submit" className="add-button">Dodaj</button>
         </form>
     )
 }

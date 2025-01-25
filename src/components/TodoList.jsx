@@ -7,7 +7,7 @@ function TodoList({ zadania, usunZadanie })
             {zadania.map((zadanie) => (
                 <li key={zadanie.id} className="bar">
                     <span>{zadanie.nazwa}</span>
-                    <button onClick={() => usunZadanie(zadanie.id)} className="remove_button">
+                    <button onClick={() => usunZadanie(zadanie.id)} className="remove-button">
                         Usuń
                     </button>
                 </li>

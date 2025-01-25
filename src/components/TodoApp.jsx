@@ -8,6 +8,18 @@ function TodoApp()
 
     const dodajZadanie = (nazwa) =>
     {
+		if (nazwa.length < 5) 
+        {
+            alert("Nazwa zadania musi mieć co najmniej 5 znaków!")
+            return
+        }
+		
+		if (zadania.some((zadanie) => zadanie.nazwa === nazwa))
+        {
+            alert("Takie zadanie już istnieje na liście!")
+            return
+        }
+		
         ustawZadania([...zadania, { nazwa, id: Date.now() }])
     }
 

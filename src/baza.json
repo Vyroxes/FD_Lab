@@ -1,0 +1,31 @@
+{
+  "baza": [
+    {
+      "id": "ac3c",
+      "marka": "Alfa Romeo",
+      "model": "147",
+      "rok_produkcji": "2006",
+      "silnik": "1.9 JTDm",
+      "kolor": "Czarny",
+      "numer_rejestracyjny": "TKI7327C"
+    },
+    {
+      "id": "71fc",
+      "marka": "Peugeot",
+      "model": "207 RC",
+      "rok_produkcji": "2008",
+      "silnik": "1.6 THP",
+      "kolor": "Czarny",
+      "numer_rejestracyjny": "TKI2345D"
+    },
+    {
+      "id": "3885",
+      "marka": "VW",
+      "model": "Jetta 6",
+      "rok_produkcji": "2012",
+      "silnik": "1.2 TSI",
+      "kolor": "Czarny",
+      "numer_rejestracyjny": "ZPL35412"
+    }
+  ]
+}
