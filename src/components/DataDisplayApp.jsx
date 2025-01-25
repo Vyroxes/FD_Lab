@@ -17,7 +17,7 @@ const DataDisplayApp = () => {
     useEffect(() => {
         const fetchData = () => {
             setLoading(true);
-            fetch('http://localhost:3000/wypozyczalnia_samochodow')
+            fetch('http://localhost:3000/baza')
                 .then(response => response.json())
                 .then(newData => {
                     setData(newData);
@@ -34,7 +34,7 @@ const DataDisplayApp = () => {
 
 
     const addCar = (car) => {
-        fetch('http://localhost:3000/wypozyczalnia_samochodow', {
+        fetch('http://localhost:3000/baza', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const DataDisplayApp = () => {
     };
 
     const deleteCar = (id) => {
-        fetch(`http://localhost:3000/wypozyczalnia_samochodow/${id}`, {
+        fetch(`http://localhost:3000/baza/${id}`, {
             method: 'DELETE',
         })
             .then(() => {
