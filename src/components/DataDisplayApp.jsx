@@ -17,14 +17,14 @@ const DataDisplayApp = () => {
     useEffect(() => {
         const fetchData = () => {
             setLoading(true);
-            fetch('http://localhost:3000/baza')
+            fetch('http://localhost:3000/wypozyczalnia_samochodow')
                 .then(response => response.json())
                 .then(newData => {
                     setData(newData);
                     setLoading(false);
                 })
                 .catch(err => {
-                    console.error("Błąd podczas ładowania danych:", err);
+                    console.error('Błąd podczas ładowania danych:', err);
                     setLoading(false);
                 });
         };
@@ -34,7 +34,7 @@ const DataDisplayApp = () => {
 
 
     const addCar = (car) => {
-        fetch('http://localhost:3000/baza', {
+        fetch('http://localhost:3000/wypozyczalnia_samochodow', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,17 +45,17 @@ const DataDisplayApp = () => {
             .then(newCar => {
                 setData(prevData => [...prevData, newCar]);
             })
-            .catch(err => console.error("Błąd podczas dodawania samochodu:", err));
+            .catch(err => console.error('Błąd podczas dodawania samochodu:', err));
     };
 
     const deleteCar = (id) => {
-        fetch(`http://localhost:3000/baza/${id}`, {
+        fetch(`http://localhost:3000/wypozyczalnia_samochodow/${id}`, {
             method: 'DELETE',
         })
             .then(() => {
                 setData(prevData => prevData.filter(car => car.id !== id));
             })
-            .catch(err => console.error("Błąd podczas usuwania samochodu:", err));
+            .catch(err => console.error('Błąd podczas usuwania samochodu:', err));
     };
 
     const handleInputChange = (e) => {
@@ -79,7 +79,7 @@ const DataDisplayApp = () => {
                 numer_rejestracyjny: ''
             });
         } else {
-            alert("Proszę wypełnić wszystkie pola!");
+            alert('Proszę wypełnić wszystkie pola!');
         }
     };
 
