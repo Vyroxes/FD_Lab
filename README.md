@@ -1,1 +1,1 @@
-Laboratorium z Frontend developmentu
+Laboratorium z przedmiotu frontend development
